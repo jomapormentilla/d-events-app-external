@@ -1,0 +1,20 @@
+{{#events}}
+<div class="card text-bg-light">
+    <div class="card-body">
+        <h2 class="card-title" style="text-transform: uppercase">{{ title }}</h2>
+        <p class="card-text">{{ description }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Likes: <span class="badge rounded-pill text-bg-dark">{{ likes }}</span>
+            <form method="POST" action="/event/like">
+                <input type="hidden" value="{{id}}" name="id">
+                <input class="btn btn-primary card-link" type="submit" value="Like">
+            </form>
+            <form method="POST" action="/event/unlike">
+                <input type="hidden" value="{{id}}" name="id">
+                <input class="btn btn-warning" type="submit" value="UN-Like">
+            </form>
+        </p>
+    </div>
+</div>
+<br/>
+{{/events}}
